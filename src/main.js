@@ -4,6 +4,9 @@ import store from './store'
 import router from './router'
 import './styles/reset.css'
 import './styles/index.less'
-// vant
-import { Swipe, SwipeItem } from 'vant';
-createApp(App).use(router).use(store).use(Swipe).use(SwipeItem).mount('#app')
+import './assets/iconfont/iconfont.css'
+
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
+createApp(App).use(router).use(store).use(ElementPlus).mount('#app')

@@ -1,23 +1,25 @@
 <template>
   <my-header>
       <template #nav-home>
-        <router-link to="/home">Home</router-link>
+        <router-link to="/home">首页</router-link>
       </template>
       <template #nav-movie>
-        <router-link to="/movie">Movie</router-link>
+        <router-link to="/movie">影视</router-link>
       </template>
       <template #nav-book>
-          <router-link to="/book">Book</router-link>
+          <router-link to="/book">书籍</router-link>
       </template>
       <template #nav-music>
-        <router-link to="/music">Music</router-link>
+        <router-link to="/music">音乐</router-link>
       </template>
       <template #nav-game>
-          <router-link to="/game">Game</router-link>
+          <router-link to="/game">游戏</router-link>
       </template>
           
       <template #nav-newit>
-        <router-link to="/newit">NewIt</router-link>
+        <router-link to="/newit">
+          <span class="iconfont" style="color: rgb(128,128,128); font-size: 18px;">&#xe655;</span>
+        </router-link>
       </template>
       <template #nav-user>
         <router-link to="/user">
@@ -27,6 +29,7 @@
   </my-header>
   <div class="main-wrap">
     <router-view></router-view>
+
   </div>
 </template>
 
@@ -45,7 +48,7 @@ export default {
 <style lang="less" scoped>
   .main-wrap {
     width: 1200px;
-    height: 400px;
+    height: 2000px;
     margin: 0 auto;
     padding-top: 46px;
     background-color: aqua;

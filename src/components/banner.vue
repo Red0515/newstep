@@ -1,59 +1,55 @@
 <template>
-    <div>
-        <ul>
-            <li v-for="item in img" :key="item.id">
-                <img :src="item.banner" alt="" />
-            </li>
-        </ul>
-        <img src="../assets/images/banner/banner2.jpg" alt="">
-    </div>
+  <el-row>
+  <el-button>默认按钮</el-button>
+  <el-button type="primary">主要按钮</el-button>
+  <el-button type="success">成功按钮</el-button>
+  <el-button type="info">信息按钮</el-button>
+  <el-button type="warning">警告按钮</el-button>
+  <el-button type="danger">危险按钮</el-button>
+</el-row>
 </template>
 
 <script>
+import { ElButton} from 'element-plus'
 
 export default {
+  components:{
+    ElButton
+  },
     data() {
     return {
       img: [
         {
             id: 1,
-             banner: '../assets/images/banner/banner1.jpg' 
+             banner: require('../assets/images/banner/banner1.jpg' )
         },
         {
             id: 2,
-             banner: '../assets/images/banner/banner2.jpg' 
+             banner: require('../assets/images/banner/banner2.jpg' ) 
         },
         {
             id: 3,
-             banner: '../assets/images/banner/banner3.jpg' 
+             banner: require('../assets/images/banner/banner3.jpg' )
         },
         {
             id: 4,
-             banner: '../assets/images/banner/banner4.jpg' 
+             banner: require('../assets/images/banner/banner4.jpg' ) 
         },
         {
             id: 5,
-             banner: '../assets/images/banner/banner5.jpg' 
+             banner: require('../assets/images/banner/banner5.jpg' )
         },
         {
             id: 6,
-             banner: '../assets/images/banner/banner6.jpg' 
+             banner: require('../assets/images/banner/banner6.jpg' )
         },
       ]
     };
   },
+  methods: {
+  }
 }
 </script>
 
 <style lang="less" scoped>
-  .van-swipe {
-      width: 500px;
-  }
-  .my-swipe .van-swipe-item {
-    color: #fff;
-    font-size: 20px;
-    line-height: 150px;
-    text-align: center;
-    
-  }
 </style>
