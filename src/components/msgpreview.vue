@@ -2,7 +2,7 @@
 <div class="msg-preview">
     <div class="arrow"></div>
     <ul>
-        <li>私信</li>
+        <li @click="navToMsg">私信</li>
         <li>回帖</li>
         <li>点赞</li>
     </ul>
@@ -11,7 +11,12 @@
 
 <script>
 export default {
-    name: 'MsgPreview'
+    name: 'MsgPreview',
+    methods: {
+        navToMsg () {
+            console.log("NavToMsg");
+        }
+    }
 }
 </script>
 
@@ -33,10 +38,12 @@ export default {
         } 
     }
     .arrow {
-        width: 12px;
-        height: 12px;
         top: -10px;
-        margin: -12px 25px 0 25px;
-        background-color: black;
+        margin: -12px 25px 0 25px;    
+        width: 0;
+        height: 0;
+        border-width: 4px 7px 8px;
+        border-style: solid;
+        border-color: transparent transparent #808080;
     }
 </style>

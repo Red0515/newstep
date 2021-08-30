@@ -11,17 +11,17 @@
             <div class="nav-game a-hover" :class="($route.path == '/game') ? 'isactive' : '' "><slot name="nav-game" /></div>
             <div class="search">
                 <div class="search-icon iconfont">&#xe7ae;</div>
-                <input class="search-txt" type="text">
-                <span class="iconfont search-clear">&#xe60f;</span>
-                <button class="search-btn iconfont" type="submit">&#xe74d;</button>
+                <input @input="inputEvent" @focus="onSearchFocus" @blur="offSearchFocus" class="search-txt" type="text">
+                <span v-show="searchClearState" class="iconfont search-clear">&#xe60d;</span>
+                <button v-show="searchBtnState" class="search-btn iconfont" type="submit">&#xe74d;</button>
             </div>
             <div class="nav-user">
                 <div class="nav-newit a-hover" :class="($route.path == '/newit') ? 'isactive' : '' ">
                     <slot name="nav-newit"></slot>
                 </div>
-                <div class="nav-msg iconfont">
+                <div class="nav-msg iconfont" @click="showMsgPre">
                     &#xe603;
-                    <msg-preview></msg-preview>
+                    <msg-preview v-show="msgPreState"></msg-preview>
                 </div>
                 <div class="nav-username">CallmeRED</div>
                 <div class="nav-avatar">
@@ -41,11 +41,31 @@ export default {
     },
     data() {
         return {
+            msgPreState: false,
+            searchBtnState: false,
+            searchClearState: false
         }
     },
     created: function () {
     },
     methods: {
+        showMsgPre () {
+            this.MsgPreState = !this.MsgPreState
+            console.log(this.MsgPreState)
+        },
+        onSearchFocus () {
+            this.searchBtnState = true
+        },
+        offSearchFocus () {
+            this.searchBtnState = false
+        },
+        inputEvent (e) {
+            if (e.target.value) {
+                this.searchClearState = true
+            }else {
+                this.searchClearState = false
+            }
+        }
     },
     computed: {
          
